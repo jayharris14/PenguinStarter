@@ -2,8 +2,7 @@ var penguinParadise=d3.json("classData.json")
 
 var successFCN=  function(penguin)
 {
-console.log("penguins", penguin)
-setBanner("Here's the Penguins");
+console.log("penguins", penguin);
 drawTable(penguin)}
 
 var failureFCN= function(error)
