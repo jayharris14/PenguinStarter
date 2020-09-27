@@ -27,7 +27,7 @@ var rows=d3.select("employeeTable tbody")
 
   rows.append("td")
   .append("img")
-  attr ("src", function(penguin)
+  .attr ("src", function(penguin)
   {return penguin.picture})
 
   rows.append("td")
