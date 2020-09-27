@@ -23,8 +23,8 @@ var rows=d3.select("employeeTable tbody")
   .append("tr")
 
   rows.append("td")
-  .text{function(penguin)
-  {return penguin.picture}}
+  .text(function(penguin)
+  {return penguin.picture})
 
   rows.append("td")
   .append("img")
