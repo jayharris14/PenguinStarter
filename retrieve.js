@@ -1,12 +1,24 @@
-var setBanner= function(message
-{d3.select("banner").text(message)})
+var penguinParadise=d3.json("classData.json")
+
+var successFCN=  function(penguin)
+{
+console.log("penguins", penguin)
+setBanner("Here's the Penguins");
+drawTable(penguin)}
+
+var failureFCN= function(error)
+{console.log(penguin)}
+
+penguinParadise.then(successFCN, failureFCN)
+
+
 
 var drawTable= function(penguin)
 {
-  console.log {"hi", penguins}
+  console.log {"hi", penguin}
 var rows=d3.select("employeeTable tbody")
   .selectAll("tr")
-  .data(penguins)
+  .data(penguin)
   .enter()
   .append("tr")
 
@@ -35,13 +47,5 @@ rows.append("td")
 .text(function(penguin)
 {return penguin.finalgrade})
 
-var penguinParadise=d3.json("classdata.json")
-
-var successFCN=  function(pennguins)
-console.log("penguins", penguins)
-setBanner("Here's the Penguins");
-drawTable(penguins)
-
-var failureFCN= function(error)
 
 }
