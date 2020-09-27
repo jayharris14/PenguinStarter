@@ -15,7 +15,7 @@ penguinParadise.then(successFCN, failureFCN)
 
 var drawTable= function(penguin)
 {
-  console.log {"hi", penguin}
+  console.log ("hi", penguin)
 var rows=d3.select("employeeTable tbody")
   .selectAll("tr")
   .data(penguin)
