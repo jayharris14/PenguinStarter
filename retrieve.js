@@ -71,15 +71,19 @@ rows.append("td")
 
 }
 
-quizmean.sort(function(charA,charB)
+
+var showAlert = function(penguin)
+{
+  console.log("You have clicked on Events");
+    penguin.sort(function(penguinA,penguinB)
     {
-        if(charA.quizmean ==
-                        charB.quizmean)
+        if(penguinA.final ==
+                        penguinB.final[0].grade)
         {
             return 0;
         }
-        else if (charA.quizmean > 
-                        charB.quizmean))
+        else if (penguinA.final > 
+                        penguinB.final[0].grade)
         {
             return 1;
         }
@@ -87,57 +91,8 @@ quizmean.sort(function(charA,charB)
         {
             return -1;
         }
-    });
+        drawTable(penguin)
+})}
 
-testmean.sort(function(charA,charB)
-    {
-        if(charA.testmean ==
-                        charB.testmean)
-        {
-            return 0;
-        }
-        else if (charA.testmean > 
-                        charB.testmean))
-        {
-            return 1;
-        }
-        else    //char is <=100
-        {
-            return -1;
-        }
-
-homeworkmean.sort(function(charA,charB)
-    {
-        if(charA.homeworkmean ==
-                        charB.homeworkmean)
-        {
-            return 0;
-        }
-        else if (charA.homeworkmean > 
-                        charB.homeworkmean)
-        {
-            return 1;
-        }
-        else    //char is <=100
-        {
-            return -1;
-        }
-
-finalmean.sort(function(charA,charB)
-    {
-        if(charA.finalmean ==
-                        charB.finalmean)
-        {
-            return 0;
-        }
-        else if (charA.finalmean > 
-                        charB.finalmean)
-        {
-            return 1;
-        }
-        else    //char is <=100
-        {
-            return -1;
-        }
-
-
+d3.select("#five")
+    .on("click",showAlert)
