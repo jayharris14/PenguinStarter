@@ -1,10 +1,10 @@
 var penguinParadise=d3.json("classData.json")
 
-var successFCN=  function(penguin)
+var successFCN=  function(penguins)
 {
-console.log("penguins", penguin);
-drawTable(penguin)
-sortfunction()}
+console.log("penguins", penguins);
+drawTable(penguins)
+myfunction(penguins)}
 
 var failureFCN= function(error)
 {console.log("error", error)}
@@ -72,19 +72,21 @@ rows.append("td")
 
 }
 
-var  sortfunction=function()
+var myfunction=function(penguins)
 {
-var showAlert = function(penguins)
+var showAlert = function()
 {
   console.log("You have clicked on Events");
+    d3.selectAll("#tab tr")
+    .remove()
     penguins.sort(function(penguinA,penguinB)
     {
-        if(penguinA.final ==
+        if(penguinA.final[0].grade ==
                         penguinB.final[0].grade)
         {
             return 0;
         }
-        else if (penguinA.final > 
+        else if (penguinA.final[0].grade > 
                         penguinB.final[0].grade)
         {
             return 1;
@@ -93,8 +95,12 @@ var showAlert = function(penguins)
         {
             return -1;
         }
-        drawTable(penguin)
-})}
+        
+})
+    console.log(penguins)
+    drawTable(penguins)
+}
 
 d3.select("#five")
-    .on("click",showAlert)}
+    .on("click",showAlert)
+}
